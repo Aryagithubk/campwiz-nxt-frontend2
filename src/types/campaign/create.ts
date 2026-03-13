@@ -42,3 +42,7 @@ export const campaignReducer = (state: CampaignCreate | CampaignUpdate, action: 
 }
 export type CampaignAction = Partial<CampaignCreate | CampaignUpdate>
 export type CampaignCreateDispatch = (action: CampaignAction) => void
+export type Campaign = CampaignCreate & {
+  campaignId: string
+  archivedAt: string | null
+}

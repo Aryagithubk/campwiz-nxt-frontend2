@@ -1,7 +1,11 @@
 export const RoundStatus = {
-  PENDING: "PENDING",
   ACTIVE: "ACTIVE",
-  CLOSED: "CLOSED",
+  PENDING: "PENDING",
+  PAUSED: "PAUSED",
+  EVALUATING: "EVALUATING",
+  COMPLETED: "COMPLETED",
+  CANCELLED: "CANCELLED",
+  ARCHIVED: "ARCHIVED"
 } as const;
 
 export type RoundStatus =
