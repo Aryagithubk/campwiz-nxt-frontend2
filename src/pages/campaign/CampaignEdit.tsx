@@ -57,7 +57,8 @@ const CampaignEdit = ({
         />
 
         <DatePicker
-          onChange={(date) => dispatch({ startDate: date?.toISOString() })}
+          onChange={(date) =>
+          dispatch({ startDate: date ? date.toISOString() : "" })}
           value={dayjs(campaign.startDate)}
           sx={{ width: { xs: "100%", sm: "27%" }, mb: 1 }}
           label={t("campaign.startDate")}
@@ -66,7 +67,8 @@ const CampaignEdit = ({
         />
 
         <DatePicker
-          onChange={(date) => dispatch({ endDate: date?.toISOString() })}
+          onChange={(date) =>
+          dispatch({ endDate: date ? date.toISOString() : "" })}
           value={dayjs(campaign.endDate)}
           sx={{ width: { xs: "100%", sm: "27%" }, mb: 1 }}
           label={t("campaign.endDate")}
