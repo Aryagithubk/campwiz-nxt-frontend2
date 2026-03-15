@@ -1,4 +1,4 @@
-import { initialCampaignCreate, type CampaignCreate } from "@/types/campaign/create";
+import type { CampaignCreate } from "@/types/campaign/create";
 import { Autocomplete, FormControlLabel, TextField, Typography } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import type { Dispatch } from "react";
 import UserInput from "@/components/user/UserInput";
 import CheckBox from "@mui/material/Checkbox";
-import { t, type TFunction } from "i18next";
+import { type TFunction } from "i18next";
 
 dayjs.extend(utc);
 
@@ -16,6 +16,7 @@ const CampaignEdit = ({
   loading,
   disabled = false,
   disableOnPrivate = false,
+  t,
   ...campaign
 }: CampaignCreate & {
   dispatch: Dispatch<Partial<CampaignCreate>>;
