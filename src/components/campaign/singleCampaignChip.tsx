@@ -53,9 +53,11 @@ const SingleCampaignChip = ({ campaign }: SingleCampaignChipProps) => {
                 }}
             />
             <CardContent>
-                <Typography variant="body1" sx={{}}>
-                    {campaign.description?.length > 100 ? campaign.description.slice(0, 100) + '...' : campaign.description}
-                </Typography>
+                <Typography variant="body1">
+                {(campaign.description ?? "").length > 100
+                ? (campaign.description ?? "").slice(0, 100) + "..."
+                : campaign.description ?? "No description available"}
+                        </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: 'space-between' }}>
                 <Status status={campaign.archivedAt === null ? RoundStatus.ACTIVE : RoundStatus.ARCHIVED} t={t} />
